@@ -1,0 +1,255 @@
+body {
+    background: #EAF6F6;
+}
+#body{
+    margin-left: 150px;
+    margin-right: 150px;
+    font-family: 'Inconsolata', monospace;
+
+}
+li{
+    font-family: 'Inconsolata', monospace;
+
+}
+@media only screen and (max-width: 600px){
+    #body{
+        margin: 5px;
+    }
+  }
+
+.imgdev{
+    left: 0;
+    width: 50px;
+    margin-right: 690px;
+}
+.container{
+    width: 900px;
+    margin-left: 20px;
+}
+.container p {
+    overflow: hidden;
+  }
+  .container p span.typed-text {
+    color: #1d7a7a;
+    margin-top: 100px;
+    font-size: 5rem;
+  }
+  .container p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+  }
+  .container p span.cursor.typing {
+    animation: none;
+  }
+  @keyframes blink {
+    0%  { background-color: #ccc; }
+    49% { background-color: #ccc; }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100%  { background-color: #ccc; }
+  }
+h1 {
+    margin-top: 100px;
+    font-size: 3rem;
+    text-align: left;
+     font-family: 'Roboto Mono', monospace;
+     font-weight: bold;
+}
+.iconLink{
+    color: #000;
+    
+    position: absolute;
+    left:70%;
+    top: 25%;
+    font-size: 40px;
+}
+.iconLinkg{
+    color: #000;
+    position: absolute;
+    left: 70%;
+    top: 35%;
+    font-size: 40px;
+}
+h2 {
+    text-align: left;
+    color: #66BFBF;
+    font-family: 'Inconsolata', monospace;
+
+}
+h3 {
+    font-size: 2rem;
+    color: #1d7a7a;
+    margin-bottom: 40px;
+    font-family: 'Inconsolata', monospace;
+
+}
+h4{
+    color: #66BFBF;
+    padding-top: 1em;
+    font-family: 'Inconsolata', monospace;
+
+}
+
+.navbar{
+    text-align: right;
+    width: 100%;
+    height: 30px;
+}
+
+.backNav{
+    position:sticky;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(109.6deg, rgb(0, 0, 0) 11.2%, rgb(11, 132, 145) 91.1%);
+    box-shadow: 0 0 10px #1d7a7a;;
+    -webkit-backdrop-filter: blur(10px);
+    padding: 5px 30px 50px 30px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+}
+
+.navbar li{
+    text-decoration: none;
+    display: inline;
+    color: #66BFBF;
+    padding-left: 20px;
+    margin-top: 1rem;
+}
+.navbar li a{
+    text-decoration: none;
+    display: inline;
+    color: #66BFBF;
+    padding-left: 20px;
+    margin-top: 1rem;
+}
+.navbar li a:hover{
+    color: #fff;
+
+}
+
+.glow span {
+    color: #66BFBF;
+}
+.resume {
+    margin-top: 20px;
+    width: 700px;
+}
+#overview {
+    width: 90%;
+    color: #000;
+    margin-left: 30px;
+
+}
+
+.tec li{
+    list-style-type: none;
+    display: inline-block;
+    color: #1d7a7a;
+    margin-right: 20px;
+    width: 200px;
+    font-family: 'Inconsolata', monospace;
+
+
+}
+
+h5 {
+    position: relative;
+    display: inline-block;
+
+}
+
+.ptop {
+    padding-top: 200px;
+}
+
+#projects a{
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+}
+#projects p {
+    
+    color: #ffff;
+    background: #1d7a7a;
+    width: 250px;
+    height: 100%;
+    margin:10px;
+    font-size: 20px;
+    display: inline-block;
+    transition: .2s;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 10px ;
+}
+#projects .text{
+    color: #ffff;
+    font-size: 20px;
+    display: inline-block;
+    transition: .2s;
+    text-align: left;
+    padding: 20px;
+    font-size: 15px;
+    border-radius: 10px ;
+    
+}
+#projects p:hover{
+    text-shadow: 0 0 10px #fff;
+    box-shadow: 0 0 10px #1d7a7a;;
+}
+.Todoimg{
+    width: 100%;
+    height: 100%;
+}
+
+footer{
+    padding-top: 20px;
+    color: #000;
+    text-align: center;
+    margin-top: 200px;
+    background: #1d7a7a;;
+    width: 100%;
+    height: 100px;
+}
+.footer-link{
+    color: #000;
+    margin: 20px;
+}
+.footer-link:hover{
+    color: #fff;
+    margin: 20px;
+}
+#contact{
+    text-align: left;
+}
+#contact .btnResum{
+    text-align: center;
+    padding: 2%;
+    margin: 0 43%  0 43%;
+}
+
+
+a{
+    text-decoration:none;
+}
+.btnResum{
+        border-radius: 10px;
+        border: #000;
+        
+        font-family: Open Sans;
+        font-size: 16px;
+        padding: 5px;
+        background-color: #1d7a7a;
+        color: #fff;
+        font-family: 'Inconsolata', monospace;
+       display: inline-block;
+       transition: .3s;
+     
+}
+.btnResum:hover{
+    background-color: #FFFFFF;
+    color: #1d7a7a;
+}
