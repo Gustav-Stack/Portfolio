@@ -39,6 +39,7 @@ document.querySelector(".navRoll").addEventListener("click", function(){
  
   if(document.querySelector("ol").classList.contains("show")){
    document.querySelector("ol").classList.remove("show");
+   
   }else{
     document.querySelector("ol").classList.add("show");
   }
@@ -48,8 +49,10 @@ document.querySelector(".navRoll").addEventListener("click", function(){
  
   if(document.querySelector(".navbar").classList.contains("u")){
    document.querySelector(".navbar").classList.remove("u");
+   document.querySelector("p").classList.remove("navRolled");
   }else{
     document.querySelector(".navbar").classList.add("u");
+    document.querySelector("p").classList.add("navRolled");
   }
   console.log("removed");
 })
