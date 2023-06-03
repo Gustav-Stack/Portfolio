@@ -88,6 +88,11 @@ h5 {
 .navbar{
     top: 0;
     position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -o-sticky;
+    position: -ms-sticky;
+    position: sticky;
     background-color: rgba(217, 234, 236, 0.1);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -111,7 +116,7 @@ h5 {
 }
 .navbar-brand{
     color: #1d7a7a;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 /* Navbar */
@@ -211,8 +216,8 @@ footer {
 
 
 .links {
-    width: 200px;
-    margin-left: 550px;
+    width: 180px;
+    left: 550px;
     padding-bottom: 59px;
     position: relative;
     top: -230px;
