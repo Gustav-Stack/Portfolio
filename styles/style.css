@@ -6,37 +6,30 @@ body {
     background: #f5f5f7;
 
 }
-.container{
+
+.container {
     display: grid;
     justify-items: center;
 
 }
-.img{
+
+.img {
     width: 25px;
 }
-th{
+
+th {
     font-weight: normal;
 }
 
 h1 {
     margin-top: 100px;
-    font-family: 'Open Sans', sans-serif;
     font-weight: bold;
-}
-
-
-h2,
-h4 {
-    color: RGB(1 31 63 / 80%);
 }
 
 h3 {
     font-weight: bold;
     font-size: 2rem;
-    color: rgb(1 31 63 / 80%);
     margin-bottom: 40px;
-
-
 }
 
 h4 {
@@ -48,11 +41,19 @@ h5 {
     display: inline-block;
 }
 
+h3,
+h4,
+footer,
+.glow span,
+.tec li,
+.btnResum:hover,
+.btnproject:hover {
+    color: rgb(1 31 63 / 80%);
+}
+
 
 /* Effect digitation */
-.glow span {
-    color: RGB(1 31 63 / 80%);
-}
+
 
 .container p span.typed-text {
     color: rgb(1 31 63);
@@ -97,7 +98,7 @@ h5 {
 /* Effect digitation */
 
 /* Navbar */
-.navbar{
+.navbar {
     top: 0;
     position: fixed;
     position: -webkit-sticky;
@@ -113,23 +114,27 @@ h5 {
     z-index: 1;
     padding-top: 0;
     padding-bottom: 0;
-    
-    
+
+
 }
-.nav-link{
+
+.nav-link {
     font-size: 18px;
     padding-right: 20px;
     color: #fff;
     transition: .5;
 }
+
 .navbar-toggler {
     border: 000;
-    
+
 }
-.navbar-toggler-icon{
+
+.navbar-toggler-icon {
     width: 25px;
 }
-.nav-link:hover{
+
+.nav-link:hover {
     color: #52cb95;
 }
 
@@ -148,7 +153,6 @@ h5 {
 .tec li {
     display: inline-block;
     list-style-type: none;
-    color: rgb(1 31 63 / 80%);
     width: 200px;
 }
 
@@ -160,7 +164,6 @@ h5 {
 
 /* Projetos */
 .grid {
-    font-family: 'Open Sans', sans-serif;
     display: grid;
     grid-template-columns: auto auto auto;
 }
@@ -200,8 +203,6 @@ strong {
     font-size: 15px;
     border-radius: 10px;
     line-height: 12pt;
-
-
 }
 
 #projects p:hover {
@@ -222,7 +223,6 @@ footer {
     align-items: center;
     text-align: center;
     justify-content: space-around;
-    color: rgb(1 31 63 / 80%);
     text-align: center;
     margin-top: 200px;
     height: 100px;
@@ -243,7 +243,8 @@ footer {
     font-size: 30px;
 }
 
-.iconLink:hover {
+.iconLink:hover,
+.iconForm:hover {
     color: #000;
 }
 
@@ -257,29 +258,13 @@ a {
     text-decoration: none;
 }
 
-.btnResum {
-    border-radius: 10px;
-    border: #000;
-    width: 5%;
-    height: 20%;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-    padding: 5px;
-    background-color: rgb(1 31 63 / 80%);
-    color: #fff;
-    display: inline-block;
-    transition: .3s;
-    
-
-}
-
-.btnResum1 {
+.btnResum,
+.btnproject {
     border-radius: 5px;
     border: #000;
-    font-family: 'Open Sans', sans-serif;
     font-size: 15px;
     padding: 3px;
-    margin-top:8px;
+    margin-top: 8px;
     margin-bottom: 5px;
     background-color: rgb(1 31 63 / 80%);
     color: #fff;
@@ -288,67 +273,39 @@ a {
 
 }
 
-.btnResum:hover {
-    background-color: #FFF;
-    color: rgb(1 31 63 / 80%);
-}
-
-.btnResum1:hover {
-    background-color: #FFF;
-    color: rgb(1 31 63 / 80%);
-}
-
 .btnproject {
-    border-radius: 5px;
-    border: #000;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
     margin-left: 20px;
     margin-bottom: 50px;
-    background-color: rgb(1 31 63 );
-    color: #fff;
-    display: inline-block;
-    transition: .3s;
+    background-color: rgb(1 31 63);
 }
 
+.btnResum:hover,
 .btnproject:hover {
-    background-color: #FFFFFF;
-    color: rgb(1 31 63 / 80%);
+    background-color: #FFF;
+
 }
 
-.btnproject,
-.btnResum {
-    font-family: 'Open Sans', sans-serif;
+.formular {
+
+    background-color: #FFF;
+    padding: 30px;
+    width: 100%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.navRoll {
-    visibility: hidden;
-}
-.formular{
-
- background-color: #FFF;
- padding: 30px;
- width: 100%;
- border-radius: 20px;
- display: flex;
- flex-direction: column;
-}
-.iconForm{
+.iconForm {
     display: block;
     font-size: 20px;
     color: #1d7a7a;
     text-align: left;
     resize: none;
     transition: .5s;
- 
+
 }
-textarea{
-    resize: none;
-}
-.iconForm:hover {
-    color: #000;
-}
-.summary-language{
+
+.summary-language {
     padding-top: 20px;
     display: block;
     font-size: 12px;
@@ -363,34 +320,38 @@ textarea{
 /* responsivity */
 @media screen and (max-width: 768px) {
     .grid {
-        
+
         display: grid;
         grid-template-columns: auto auto;
-        
+
     }
 
-    .glow2{
+    .glow2 {
         margin-top: 50px;
     }
-    }
+}
 
 @media screen and (max-width: 600px) {
-    .ptop{
+    .ptop {
         padding-top: 100px;
     }
+
     .grid {
         display: grid;
         grid-template-columns: auto;
         justify-items: center;
     }
+
     .container p span.typed-text {
         font-size: 4rem;
     }
-    .tec{
+
+    .tec {
         padding-left: 0;
     }
-    th{
+
+    th {
         display: block;
     }
-    
+
 }
