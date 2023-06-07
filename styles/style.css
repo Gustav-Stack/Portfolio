@@ -56,7 +56,7 @@ footer,
 
 
 .container p span.typed-text {
-    color: rgb(1 31 63);
+    color: rgb(73 141 125);
     margin-top: 100px;
     font-size: 5rem;
 }
@@ -237,15 +237,16 @@ footer {
 
 
 
-.iconLink {
+.iconLink, .iconForm {
     display: block;
-    color: #1d7a7a;
+    color: rgb(1 31 63);
     font-size: 30px;
+    transition: .5s;
 }
 
 .iconLink:hover,
-.iconForm:hover {
-    color: #000;
+.iconForm:hover,.tec li:hover {
+    color: #1d7a7a;
 }
 
 
@@ -296,13 +297,7 @@ a {
 }
 
 .iconForm {
-    display: block;
     font-size: 20px;
-    color: #1d7a7a;
-    text-align: left;
-    resize: none;
-    transition: .5s;
-
 }
 
 .summary-language {
