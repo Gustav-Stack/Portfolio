@@ -282,6 +282,10 @@ a {
     margin-bottom: 50px;
     background-color: rgb(1 31 63);
 }
+button[disabled] {
+    background-color: #ccc; /* Cor de fundo diferente para indicar desativação */
+    cursor: not-allowed;   /* Altera o cursor quando o botão está desativado */
+  }
 
 .btnResum:hover,
 .btnproject:hover {
