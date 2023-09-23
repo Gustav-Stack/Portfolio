@@ -165,8 +165,8 @@ footer,
 
 /* Projetos */
 .grid {
-    columns: 15rem auto;
-    column-fill: balance;
+    display: flex;
+
 }
 #projects{
     text-align: center;
@@ -326,6 +326,9 @@ button[disabled] {
     }
     .centralize{
         display: flex;
+    }
+    .grid{
+        flex-direction: column;
     }
     
 }
