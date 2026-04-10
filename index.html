@@ -1,164 +1,520 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-  <link rel="shortcut icon" href="images/DEV_gustavo.png" type="image/x-icon">
+  <link rel="shortcut icon" href="images/84866142.svg" type="image/x-icon">
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <link href="styles/style.css" rel="stylesheet">
-
-  <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand brand" href=""><i><img class="img" src="images/G.png" style="
-          margin-bottom: 4px;
-      " alt=""></i></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
-      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#overview">Sobre</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projetos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contato</a>
-        </li>
-        <li class="nav-item">
-          <a href="images/Gustavo Lima de Lucena .pdf" target="_blank"><button class="btnResum">Currículo</button></a>
-        </li>
-
-      </ul>
-    </div>
-  </nav>
-  </nav>
-
   <title>Gustavo | Portfólio</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: #222222;
+      --accent: #00e5a0;
+      --accent2: #0066ff;
+      --text: #f0f0f0;
+      --muted: #888;
+      --font-mono: 'Space Mono', monospace;
+      --font-sans: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,10,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+    .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .btn-cv {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 0.5rem 1.2rem;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      background: transparent;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-cv:hover { background: var(--accent); color: #000; }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 4rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -200px; right: -200px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(0,229,160,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-inner { max-width: 800px; }
+    .hero-tag {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: inline-block; width: 32px; height: 1px;
+      background: var(--accent);
+    }
+    h1 {
+      font-family: var(--font-mono);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    h1 span { color: var(--accent); }
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: 2.5rem;
+      line-height: 1.8;
+    }
+    .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      background: var(--accent);
+      color: #000;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
+
+    /* STACK BAR */
+    .stack-bar {
+      padding: 2rem 4rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 2.5rem; flex-wrap: wrap; align-items: center;
+    }
+    .stack-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+    .stack-items { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .stack-pill {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 0.3rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 5rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-header {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .section-num {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    h2 {
+      font-family: var(--font-mono);
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+    .section-line {
+      flex: 1; height: 1px;
+      background: var(--border);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .skills-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      list-style: none;
+    }
+    .skills-list li {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .skills-list li::before {
+      content: '▸';
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem;
+      position: relative;
+      transition: border-color 0.2s, transform 0.2s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+    .project-card.featured {
+      grid-column: span 2;
+      border-color: rgba(0,229,160,0.25);
+    }
+    .project-tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+    }
+    .project-card h3 {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+    }
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+    .project-stack {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+    .project-stack span {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      color: var(--muted);
+    }
+    .project-links { display: flex; gap: 1rem; }
+    .project-links a {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 0.4rem;
+      transition: color 0.2s;
+    }
+    .project-links a:hover { color: var(--accent); }
+    .wip-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      padding: 0.2rem 0.6rem;
+      background: rgba(0,229,160,0.1);
+      color: var(--accent);
+      border-radius: 3px;
+      margin-left: 0.75rem;
+      vertical-align: middle;
+    }
+
+    /* CONTACT */
+    .contact-wrap {
+      text-align: center;
+      padding: 5rem 2rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+    }
+    .contact-wrap p {
+      color: var(--muted);
+      max-width: 480px;
+      margin: 1rem auto 2rem;
+      font-size: 0.95rem;
+    }
+    .contact-links {
+      display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .contact-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      transition: color 0.2s;
+    }
+    .contact-links a:hover { color: var(--accent); }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero { padding: 7rem 1.5rem 3rem; }
+      .stack-bar { padding: 1.5rem; }
+      section { padding: 3rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; }
+    }
+  </style>
 </head>
 
 <body>
 
+  <nav>
+    <a class="nav-logo" href="#">GL_</a>
+    <ul class="nav-links">
+      <li><a href="#sobre">sobre</a></li>
+      <li><a href="#projetos">projetos</a></li>
+      <li><a href="#contato">contato</a></li>
+      <li><a class="btn-cv" href="images/Gustavo_Lucena_Curriculo.pdf" target="_blank">currículo</a></li>
+    </ul>
+  </nav>
 
-  <div class="container">
-    <div class="resume">
-      <h1 class="glow"> <span>
-          <p>Olá, eu sou
-        </span><br><span class="typed-text">Gustavo</span><span class="cursor">&nbsp;</span></p>
-      </h1>
-      <div class="links">
-        <th class="links"><a class="iconLink iconLinkl" target="_blank"
-            href="https://www.linkedin.com/in/gustavo-lucena-b9565a197/"><i
-              class="fa-brands fa-linkedin"></i>LinkedIn</a>
-          <a class="iconLink iconLinkg" target="_blank" href="https://github.com/Gustav-Stack"><i
-              class="fa-brands fa-github"></i>GitHub</a>
-          <a class="iconLink iconLinki" target="_blank" href="https://github.com/Gustav-Stack"><i
-              class="fa-brands fa-instagram"></i>Instagram</a>
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">DESENVOLVEDOR BACKEND</div>
+      <h1>Olá, eu sou<br><span>Gustavo.</span></h1>
+      <p class="hero-desc">
+        Construo APIs escaláveis e bem estruturadas com NestJS, TypeScript e PostgreSQL.
+        Atualmente atuando no backend de uma plataforma de entregas em desenvolvimento,
+        onde contribuo na arquitetura e decisões técnicas do sistema.
+      </p>
+      <div class="hero-links">
+        <a class="btn-primary" href="#projetos">ver projetos</a>
+        <a class="btn-ghost" href="https://www.linkedin.com/in/gustavo-lucena1/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a class="btn-ghost" href="https://github.com/Gustav-Stack" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
-    </div>
-    <h2 class="glow2 ">Um Desenvolvedor Web<br> Focado em responsividade e agilidade nos processos de criação</h2>
-
-
-    <div id="overview" class="ptop ">
-      <h3>Sobre </h3>
-      <p>Atualmente Trabalhando em projetos pessoais no desenvolvimento web
-        para ampla personificação dos meus conhecimentos.
-        Experiência em | HTML/CSS/JavaScript & C | Frameworks
-        como Bootstrap, Jquery & Node.Js | Versionamento Git
-        e competências UI/UX Design, Estudante do 3° semestre
-        de engenharia de software, Inglês Avançado, e Aluno
-        do Bootcamp "The Complete 2023 Web Development Bootcamp".</p>
-      <ul class="tec">
-
-        <li><i class="fa-brands fa-html5" style="color: #91d9d6; margin-right: 5px;"></i>HTML</li>
-        <li><i class="fa-brands fa-css3-alt" style="color: #91d9d6; margin-right: 5px;"></i>CSS</li>
-        <li><i class="fa-brands fa-js" style="color: #91d9d6; margin-right: 5px;"></i>JavaScript</li>
-        <li><i class="fa-solid fa-database" style="color: #91d9d6; margin-right: 5px;"></i>noSQL | MongoDB</li>
-        <li><i class="fa-solid fa-lock" style="color: #91d9d6; margin-right: 5px;"></i>Oauth2.0</li>
-        <li><i class="fa-brands fa-react" style="color: #91d9d6; margin-right: 5px;"></i>React.js</li>
-        <li><i class="fa-brands fa-node-js" style="color: #91d9d6; margin-right: 5px;"></i>Node.js</li>
-      </ul>
-      <hr>
-      <div  class="ptop">
-        
-        <h3>Projetos</h3>
-        <div id="projetos">
-        <div class="card">
-          
-            <img class="card__image" src="images/aluguel.png" alt="aluguel de carros">
-            <div class="card__content">
-            <p class="card__title">Aluguel de Carros</p>
-            
-            <p class="card__description">  <span class="summary-language">HTML, CSS, JavaScript, ReactJS.</span>
-               Interface de usuário amigável e intuitiva, você pode pesquisar uma ampla variedade de carros, comparar preços com transparência e efetuar reservas com facilidade. Este aplicativo é a solução perfeita para suas necessidades de mobilidade, seja para viagens de lazer ou negócios.
-            </p>
-            <a target="_blank" href="https://aluguelcarros.netlify.app"><button  class="card__button">Live Demo</button></a>
-            
-            <a href="https://github.com/Gustav-Stack/Aluguel_de_carros" target="_blank">
-            <button class="card__button secondary">Source Code</button>
-            </a>
-          </div>
-        </div>
-        <div class="card"> 
-          <img class="card__image" src="images/BookFlow.png" alt="BookFlow"> <div class="card__content">
-            <p class="card__title">BookFlow</p>
-            <p class="card__description"><span class="summary-language">HTML, CSS, JavaScript, ReactJS, NodeJS, MongoDB.</span>
-              Permite catalogar e acompanhar livros finalizados, com recursos de gerenciamento de biblioteca, metas de leitura e histórico. A sincronização em nuvem e recursos de anotações facilitam o acesso e revisão do conteúdo.
-            </p>
-            
-            <a target="_blank" href="https://bookflow.netlify.app">
-            <button  class="card__button">Live Demo</button></a>
-            <a href="Sinta-se a vontade para me perguntar sobre o desenvolvimento" target="_blank">
-            <button class="card__button secondary">Source Code</button>
-            </a>
-          </div>
-        </div>
-      
-        </div>
-        <div id="contact" class="ptop">
-        
-        <h3>Contato</h3>
-
-        <div class="formular">
-          <img class="banner" src="/images/Hi.png" alt="banner"> 
-          <h4>Se você curtiu o meu trabalho Sinta se a Vontade para me mandar uma mensagem através dos links:</h4>
-          <a class="iconForm" target="_blank" href="https://www.linkedin.com/in/gustavo-lucena1/"><i
-              class="fa-brands fa-linkedin"></i>LinkedIn</a>
-          <a class="iconForm" target="_blank" href="https://github.com/Gustav-Stack"><i
-              class="fa-brands fa-github"></i>GitHub</a>
-          <a class="iconForm" target="_blank" href="https://github.com/Gustav-Stack"><i
-              class="fa-brands fa-instagram"></i>Instagram</a>
-          <a class="iconForm" target="_blank" href="mailto:gustavolucenaemprego@gmail.com"><i
-              class="fa-regular fa-envelope"></i>Email</a>
-          <hr>
-        </div>
-
-
-
-
-      </div>
-
     </div>
   </div>
 
+  <div class="stack-bar">
+    <span class="stack-label">STACK PRINCIPAL</span>
+    <div class="stack-items">
+      <span class="stack-pill">NestJS</span>
+      <span class="stack-pill">TypeScript</span>
+      <span class="stack-pill">PostgreSQL</span>
+      <span class="stack-pill">Prisma ORM</span>
+      <span class="stack-pill">Redis</span>
+      <span class="stack-pill">Docker</span>
+      <span class="stack-pill">Node.js</span>
+      <span class="stack-pill">REST APIs</span>
+      <span class="stack-pill">WebSockets</span>
+    </div>
+  </div>
+
+  <section id="sobre">
+    <div class="section-header">
+      <span class="section-num">01.</span>
+      <h2>sobre mim</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>Desenvolvedor backend com foco em construir <strong>APIs escaláveis e bem estruturadas</strong>. Atuo com NestJS, TypeScript, PostgreSQL, Prisma ORM, Redis e Docker — desde a arquitetura até o deploy.</p>
+        <p>Tenho experiência em projetos colaborativos reais, contribuindo na <strong>definição de arquitetura</strong>, tomada de decisões técnicas e integração com times de front-end. Atualmente atuo no backend de uma startup de entregas (LikeDelivery), onde organizo e delego tarefas técnicas do time backend.</p>
+        <p>Cursando Engenharia de Software na UniCesumar, com conclusão prevista para <strong>maio de 2026</strong>. Inglês profissional (B2).</p>
+        <p>Busco minha primeira oportunidade formal como desenvolvedor backend, onde possa contribuir com <strong>código limpo, boas práticas e aprendizado contínuo.</strong></p>
+      </div>
+      <div>
+        <ul class="skills-list">
+          <li>NestJS</li>
+          <li>TypeScript</li>
+          <li>Node.js</li>
+          <li>PostgreSQL</li>
+          <li>Prisma ORM</li>
+          <li>Redis</li>
+          <li>Docker</li>
+          <li>REST APIs</li>
+          <li>WebSockets</li>
+          <li>Supabase</li>
+          <li>AWS</li>
+          <li>Git</li>
+          <li>Swagger</li>
+          <li>Scrum / Trello</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos">
+    <div class="section-header">
+      <span class="section-num">02.</span>
+      <h2>projetos</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+
+      <div class="project-card featured">
+        <div class="project-tag">PROJETO ATUAL · BACKEND</div>
+        <h3>LikeDelivery <span class="wip-badge">em desenvolvimento</span></h3>
+        <p>Plataforma de entregas em desenvolvimento. Atuo como responsável pelo backend, contribuindo na definição da arquitetura do sistema, diagramação do banco de dados e tomada de decisões técnicas em conjunto com o time. Responsável por organizar e delegar tarefas técnicas, além de implementar as funcionalidades diretamente.</p>
+        <div class="project-stack">
+          <span>NestJS</span><span>TypeScript</span><span>Prisma ORM</span>
+          <span>PostgreSQL</span><span>Redis</span><span>Docker</span>
+        </div>
+        <div class="project-links">
+          <a href="#"><i class="fa-solid fa-lock"></i> repositório privado</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">BACKEND · API REST + WEBSOCKETS</div>
+        <h3>WhyApp</h3>
+        <p>Aplicativo de conversas em tempo real. Responsável pelo desenvolvimento da API com NestJS e TypeScript, integração com PostgreSQL via Prisma ORM e implementação de WebSockets para comunicação em tempo real. Colaboração direta com o time de front-end.</p>
+        <div class="project-stack">
+          <span>NestJS</span><span>TypeScript</span><span>Prisma ORM</span>
+          <span>PostgreSQL</span><span>WebSockets</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/Gustav-Stack/whyapp-backend" target="_blank"><i class="fa-brands fa-github"></i> ver código</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">FULLSTACK</div>
+        <h3>BookFlow</h3>
+        <p>Aplicativo para catalogar e acompanhar livros com gerenciamento de biblioteca, metas de leitura e histórico. Sincronização em nuvem com MongoDB.</p>
+        <div class="project-stack">
+          <span>ReactJS</span><span>Node.js</span><span>MongoDB</span>
+        </div>
+        <div class="project-links">
+          <a href="https://bookflow.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> abrir</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-tag">FRONTEND</div>
+        <h3>Aluguel de Carros</h3>
+        <p>Interface para pesquisa e reserva de carros com comparação de preços. Desenvolvido com ReactJS.</p>
+        <div class="project-stack">
+          <span>ReactJS</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+        </div>
+        <div class="project-links">
+          <a href="https://aluguelcarros.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> abrir</a>
+          <a href="https://github.com/Gustav-Stack/Aluguel_de_carros" target="_blank"><i class="fa-brands fa-github"></i> código</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contato">
+    <div class="section-header">
+      <span class="section-num">03.</span>
+      <h2>contato</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="contact-wrap">
+      <h2 style="font-family: var(--font-mono); font-size: 1.6rem;">vamos conversar?</h2>
+      <p>Estou buscando minha primeira oportunidade formal como desenvolvedor backend. Se tiver uma vaga ou quiser trocar ideia, é só me chamar.</p>
+      <a class="btn-primary" href="mailto:gustavolucenaemprego@gmail.com">mandar e-mail</a>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/gustavo-lucena1/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/Gustav-Stack" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="mailto:gustavolucenaemprego@gmail.com"><i class="fa-regular fa-envelope"></i> e-mail</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>desenvolvido por gustavo lucena · 2025</p>
+  </footer>
+
   <script src="app.js"></script>
 </body>
-
-<footer>
-
-  <p> COPYRIGHT © 2023 GUSTAVO </p>
-
-</footer>
-
 </html>
