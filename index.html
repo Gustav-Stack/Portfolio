@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-  <link rel="shortcut icon" href="images/84866142.svg" type="image/x-icon">
+  <link rel="shortcut icon" href="public/84866142.svg" type="image/x-icon">
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,346 +11,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Gustavo | Portfólio</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #0a0a0a;
-      --surface: #111111;
-      --border: #222222;
-      --accent: #00e5a0;
-      --accent2: #0066ff;
-      --text: #f0f0f0;
-      --muted: #888;
-      --font-mono: 'Space Mono', monospace;
-      --font-sans: 'DM Sans', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    /* NAV */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 4rem;
-      background: rgba(10,10,10,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      font-family: var(--font-mono);
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
-    .nav-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .btn-cv {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      padding: 0.5rem 1.2rem;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      background: transparent;
-      border-radius: 4px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .btn-cv:hover { background: var(--accent); color: #000; }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center;
-      padding: 8rem 4rem 4rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; top: -200px; right: -200px;
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(0,229,160,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-inner { max-width: 800px; }
-    .hero-tag {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.12em;
-      margin-bottom: 1.5rem;
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .hero-tag::before {
-      content: '';
-      display: inline-block; width: 32px; height: 1px;
-      background: var(--accent);
-    }
-    h1 {
-      font-family: var(--font-mono);
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-    h1 span { color: var(--accent); }
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 560px;
-      margin-bottom: 2.5rem;
-      line-height: 1.8;
-    }
-    .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      background: var(--accent);
-      color: #000;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      font-weight: 700;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .btn-primary:hover { opacity: 0.85; }
-    .btn-ghost {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.75rem 1.75rem;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--muted); color: var(--text); }
-
-    /* STACK BAR */
-    .stack-bar {
-      padding: 2rem 4rem;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      display: flex; gap: 2.5rem; flex-wrap: wrap; align-items: center;
-    }
-    .stack-label {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-    .stack-items { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .stack-pill {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      padding: 0.3rem 0.85rem;
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      color: var(--text);
-      background: var(--surface);
-    }
-
-    /* SECTIONS */
-    section {
-      padding: 5rem 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .section-header {
-      display: flex; align-items: center; gap: 1rem;
-      margin-bottom: 3rem;
-    }
-    .section-num {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
-    h2 {
-      font-family: var(--font-mono);
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-    .section-line {
-      flex: 1; height: 1px;
-      background: var(--border);
-    }
-
-    /* ABOUT */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-    .about-text p {
-      color: var(--muted);
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
-    }
-    .about-text p strong { color: var(--text); font-weight: 500; }
-    .skills-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.5rem;
-      list-style: none;
-    }
-    .skills-list li {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--muted);
-      display: flex; align-items: center; gap: 0.5rem;
-    }
-    .skills-list li::before {
-      content: '▸';
-      color: var(--accent);
-      font-size: 0.7rem;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.75rem;
-      position: relative;
-      transition: border-color 0.2s, transform 0.2s;
-      display: flex; flex-direction: column;
-    }
-    .project-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-    }
-    .project-card.featured {
-      grid-column: span 2;
-      border-color: rgba(0,229,160,0.25);
-    }
-    .project-tag {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      color: var(--accent);
-      letter-spacing: 0.1em;
-      margin-bottom: 0.75rem;
-    }
-    .project-card h3 {
-      font-family: var(--font-mono);
-      font-size: 1.05rem;
-      margin-bottom: 0.75rem;
-    }
-    .project-card p {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.7;
-      flex: 1;
-      margin-bottom: 1.25rem;
-    }
-    .project-stack {
-      display: flex; flex-wrap: wrap; gap: 0.4rem;
-      margin-bottom: 1.25rem;
-    }
-    .project-stack span {
-      font-family: var(--font-mono);
-      font-size: 0.68rem;
-      padding: 0.2rem 0.6rem;
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      color: var(--muted);
-    }
-    .project-links { display: flex; gap: 1rem; }
-    .project-links a {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-decoration: none;
-      display: flex; align-items: center; gap: 0.4rem;
-      transition: color 0.2s;
-    }
-    .project-links a:hover { color: var(--accent); }
-    .wip-badge {
-      display: inline-block;
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      padding: 0.2rem 0.6rem;
-      background: rgba(0,229,160,0.1);
-      color: var(--accent);
-      border-radius: 3px;
-      margin-left: 0.75rem;
-      vertical-align: middle;
-    }
-
-    /* CONTACT */
-    .contact-wrap {
-      text-align: center;
-      padding: 5rem 2rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: var(--surface);
-    }
-    .contact-wrap p {
-      color: var(--muted);
-      max-width: 480px;
-      margin: 1rem auto 2rem;
-      font-size: 0.95rem;
-    }
-    .contact-links {
-      display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;
-      margin-top: 2rem;
-    }
-    .contact-links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      display: flex; align-items: center; gap: 0.5rem;
-      transition: color 0.2s;
-    }
-    .contact-links a:hover { color: var(--accent); }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .hero { padding: 7rem 1.5rem 3rem; }
-      .stack-bar { padding: 1.5rem; }
-      section { padding: 3rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .projects-grid { grid-template-columns: 1fr; }
-      .project-card.featured { grid-column: span 1; }
-    }
-  </style>
+ <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -358,24 +19,35 @@
   <nav>
     <a class="nav-logo" href="#">GL_</a>
     <ul class="nav-links">
-      <li><a href="#sobre">sobre</a></li>
-      <li><a href="#projetos">projetos</a></li>
-      <li><a href="#contato">contato</a></li>
-      <li><a class="btn-cv" href="images/Gustavo_Lucena_Curriculo.pdf" target="_blank">currículo</a></li>
+      <li><a href="#sobre" data-pt="sobre" data-en="about">sobre</a></li>
+      <li><a href="#projetos" data-pt="projetos" data-en="projects">projetos</a></li>
+      <li><a href="#contato" data-pt="contato" data-en="contact">contato</a></li>
+      <li>
+        <a class="btn-cv" id="cv-pt" href="public/Gustavo_Lucena_Resume_BR.pdf" target="_blank" data-pt="currículo" data-en="resume">currículo</a>
+        <a class="btn-cv" id="cv-en" href="public/Gustavo_Lucena_Resume_EN.pdf" target="_blank" data-pt="currículo" data-en="resume" style="display:none;">resume</a>
+      </li>
+      <li>
+        <div class="lang-switch">
+          <button type="button" id="btn-pt" class="active" onclick="setLang('pt')">PT</button>
+          <button type="button" id="btn-en" onclick="setLang('en')">EN</button>
+        </div>
+      </li>
     </ul>
   </nav>
 
   <div class="hero">
     <div class="hero-inner">
-      <div class="hero-tag">DESENVOLVEDOR BACKEND</div>
-      <h1>Olá, eu sou<br><span>Gustavo.</span></h1>
-      <p class="hero-desc">
+      <div class="hero-tag" data-pt="DESENVOLVEDOR BACKEND" data-en="BACKEND DEVELOPER">DESENVOLVEDOR BACKEND</div>
+      <h1 data-pt-html="Olá, eu sou<br><span>Gustavo.</span>" data-en-html="Hi, I'm<br><span>Gustavo.</span>">Olá, eu sou<br><span>Gustavo.</span></h1>
+      <p class="hero-desc"
+        data-pt="Construo APIs escaláveis e bem estruturadas com NestJS, TypeScript e PostgreSQL. Atualmente atuando no backend de uma plataforma de entregas em desenvolvimento, onde contribuo na arquitetura e decisões técnicas do sistema."
+        data-en="I build scalable, well-structured APIs with NestJS, TypeScript and PostgreSQL. Currently working on the backend of a delivery platform in development, contributing to the system's architecture and technical decisions.">
         Construo APIs escaláveis e bem estruturadas com NestJS, TypeScript e PostgreSQL.
         Atualmente atuando no backend de uma plataforma de entregas em desenvolvimento,
         onde contribuo na arquitetura e decisões técnicas do sistema.
       </p>
       <div class="hero-links">
-        <a class="btn-primary" href="#projetos">ver projetos</a>
+        <a class="btn-primary" href="#projetos" data-pt="ver projetos" data-en="view projects">ver projetos</a>
         <a class="btn-ghost" href="https://www.linkedin.com/in/gustavo-lucena1/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a class="btn-ghost" href="https://github.com/Gustav-Stack" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
       </div>
@@ -383,7 +55,7 @@
   </div>
 
   <div class="stack-bar">
-    <span class="stack-label">STACK PRINCIPAL</span>
+    <span class="stack-label" data-pt="STACK PRINCIPAL" data-en="MAIN STACK">STACK PRINCIPAL</span>
     <div class="stack-items">
       <span class="stack-pill">NestJS</span>
       <span class="stack-pill">TypeScript</span>
@@ -400,15 +72,27 @@
   <section id="sobre">
     <div class="section-header">
       <span class="section-num">01.</span>
-      <h2>sobre mim</h2>
+      <h2 data-pt="sobre mim" data-en="about me">sobre mim</h2>
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
       <div class="about-text">
-        <p>Desenvolvedor backend com foco em construir <strong>APIs escaláveis e bem estruturadas</strong>. Atuo com NestJS, TypeScript, PostgreSQL, Prisma ORM, Redis e Docker — desde a arquitetura até o deploy.</p>
-        <p>Tenho experiência em projetos colaborativos reais, contribuindo na <strong>definição de arquitetura</strong>, tomada de decisões técnicas e integração com times de front-end. Atualmente atuo no backend de uma startup de entregas (LikeDelivery), onde organizo e delego tarefas técnicas do time backend.</p>
-        <p>Cursando Engenharia de Software na UniCesumar, com conclusão prevista para <strong>maio de 2026</strong>. Inglês profissional (B2).</p>
-        <p>Busco minha primeira oportunidade formal como desenvolvedor backend, onde possa contribuir com <strong>código limpo, boas práticas e aprendizado contínuo.</strong></p>
+        <p data-pt-html="Desenvolvedor backend com foco em construir <strong>APIs escaláveis e bem estruturadas</strong>. Atuo com NestJS, TypeScript, PostgreSQL, Prisma ORM, Redis e Docker — desde a arquitetura até o deploy."
+           data-en-html="Backend developer focused on building <strong>scalable, well-structured APIs</strong>. I work with NestJS, TypeScript, PostgreSQL, Prisma ORM, Redis and Docker — from architecture to deployment.">
+          Desenvolvedor backend com foco em construir <strong>APIs escaláveis e bem estruturadas</strong>. Atuo com NestJS, TypeScript, PostgreSQL, Prisma ORM, Redis e Docker — desde a arquitetura até o deploy.
+        </p>
+        <p data-pt-html="Tenho experiência em projetos colaborativos reais, contribuindo na <strong>definição de arquitetura</strong>, tomada de decisões técnicas e integração com times de front-end. Atualmente atuo no backend de uma startup de entregas (LikeDelivery), onde organizo e delego tarefas técnicas do time backend."
+           data-en-html="I have hands-on experience with real collaborative projects, contributing to <strong>architecture definition</strong>, technical decision-making and integration with front-end teams. I currently work on the backend of a delivery startup (LikeDelivery), where I organize and delegate technical tasks for the backend team.">
+          Tenho experiência em projetos colaborativos reais, contribuindo na <strong>definição de arquitetura</strong>, tomada de decisões técnicas e integração com times de front-end. Atualmente atuo no backend de uma startup de entregas (LikeDelivery), onde organizo e delego tarefas técnicas do time backend.
+        </p>
+        <p data-pt-html="Formado em <strong>Engenharia de Software</strong> pela UniCesumar. Inglês profissional (B2)."
+           data-en-html="Graduated in <strong>Software Engineering</strong> from UniCesumar. Professional English (B2).">
+          Formado em <strong>Engenharia de Software</strong> pela UniCesumar. Inglês profissional (B2).
+        </p>
+        <p data-pt-html="Busco minha primeira oportunidade formal como desenvolvedor backend, onde possa contribuir com <strong>código limpo, boas práticas e aprendizado contínuo.</strong>"
+           data-en-html="I'm looking for my first formal opportunity as a backend developer, where I can contribute with <strong>clean code, best practices and continuous learning.</strong>">
+          Busco minha primeira oportunidade formal como desenvolvedor backend, onde possa contribuir com <strong>código limpo, boas práticas e aprendizado contínuo.</strong>
+        </p>
       </div>
       <div>
         <ul class="skills-list">
@@ -425,7 +109,7 @@
           <li>AWS</li>
           <li>Git</li>
           <li>Swagger</li>
-          <li>Scrum / Trello</li>
+          <li data-pt="Scrum / Trello" data-en="Scrum / Trello">Scrum / Trello</li>
         </ul>
       </div>
     </div>
@@ -434,59 +118,71 @@
   <section id="projetos">
     <div class="section-header">
       <span class="section-num">02.</span>
-      <h2>projetos</h2>
+      <h2 data-pt="projetos" data-en="projects">projetos</h2>
       <div class="section-line"></div>
     </div>
     <div class="projects-grid">
 
       <div class="project-card featured">
-        <div class="project-tag">PROJETO ATUAL · BACKEND</div>
-        <h3>LikeDelivery <span class="wip-badge">em desenvolvimento</span></h3>
-        <p>Plataforma de entregas em desenvolvimento. Atuo como responsável pelo backend, contribuindo na definição da arquitetura do sistema, diagramação do banco de dados e tomada de decisões técnicas em conjunto com o time. Responsável por organizar e delegar tarefas técnicas, além de implementar as funcionalidades diretamente.</p>
+        <div class="project-tag" data-pt="PROJETO ATUAL · BACKEND" data-en="CURRENT PROJECT · BACKEND">PROJETO ATUAL · BACKEND</div>
+        <h3>LikeDelivery <span class="wip-badge" data-pt="em desenvolvimento" data-en="in progress">em desenvolvimento</span></h3>
+        <p data-pt="Plataforma de entregas em desenvolvimento. Atuo como responsável pelo backend, contribuindo na definição da arquitetura do sistema, diagramação do banco de dados e tomada de decisões técnicas em conjunto com o time. Responsável por organizar e delegar tarefas técnicas, além de implementar as funcionalidades diretamente."
+           data-en="Delivery platform currently in development. I'm responsible for the backend, contributing to the system's architecture, database diagramming and technical decision-making alongside the team. I organize and delegate technical tasks, as well as implement features directly.">
+          Plataforma de entregas em desenvolvimento. Atuo como responsável pelo backend, contribuindo na definição da arquitetura do sistema, diagramação do banco de dados e tomada de decisões técnicas em conjunto com o time. Responsável por organizar e delegar tarefas técnicas, além de implementar as funcionalidades diretamente.
+        </p>
         <div class="project-stack">
           <span>NestJS</span><span>TypeScript</span><span>Prisma ORM</span>
           <span>PostgreSQL</span><span>Redis</span><span>Docker</span>
         </div>
         <div class="project-links">
-          <a href="#"><i class="fa-solid fa-lock"></i> repositório privado</a>
+          <a href="#"><i class="fa-solid fa-lock"></i> <span data-pt="repositório privado" data-en="private repository">repositório privado</span></a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-tag">BACKEND · API REST + WEBSOCKETS</div>
+        <div class="project-tag" data-pt="BACKEND · API REST + WEBSOCKETS" data-en="BACKEND · REST API + WEBSOCKETS">BACKEND · API REST + WEBSOCKETS</div>
         <h3>WhyApp</h3>
-        <p>Aplicativo de conversas em tempo real. Responsável pelo desenvolvimento da API com NestJS e TypeScript, integração com PostgreSQL via Prisma ORM e implementação de WebSockets para comunicação em tempo real. Colaboração direta com o time de front-end.</p>
+        <p data-pt="Aplicativo de conversas em tempo real. Responsável pelo desenvolvimento da API com NestJS e TypeScript, integração com PostgreSQL via Prisma ORM e implementação de WebSockets para comunicação em tempo real. Colaboração direta com o time de front-end."
+           data-en="Real-time chat application. Responsible for building the API with NestJS and TypeScript, integrating PostgreSQL via Prisma ORM, and implementing WebSockets for real-time communication. Worked directly with the front-end team.">
+          Aplicativo de conversas em tempo real. Responsável pelo desenvolvimento da API com NestJS e TypeScript, integração com PostgreSQL via Prisma ORM e implementação de WebSockets para comunicação em tempo real. Colaboração direta com o time de front-end.
+        </p>
         <div class="project-stack">
           <span>NestJS</span><span>TypeScript</span><span>Prisma ORM</span>
           <span>PostgreSQL</span><span>WebSockets</span>
         </div>
         <div class="project-links">
-          <a href="https://github.com/Gustav-Stack/whyapp-backend" target="_blank"><i class="fa-brands fa-github"></i> ver código</a>
+          <a href="https://github.com/Gustav-Stack/whyapp-backend" target="_blank"><i class="fa-brands fa-github"></i> <span data-pt="ver código" data-en="view code">ver código</span></a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-tag">FULLSTACK</div>
+        <div class="project-tag" data-pt="FULLSTACK" data-en="FULL STACK">FULLSTACK</div>
         <h3>BookFlow</h3>
-        <p>Aplicativo para catalogar e acompanhar livros com gerenciamento de biblioteca, metas de leitura e histórico. Sincronização em nuvem com MongoDB.</p>
+        <p data-pt="Aplicativo para catalogar e acompanhar livros com gerenciamento de biblioteca, metas de leitura e histórico. Sincronização em nuvem com MongoDB."
+           data-en="Application to catalog and track books, with library management, reading goals and history. Cloud sync with MongoDB.">
+          Aplicativo para catalogar e acompanhar livros com gerenciamento de biblioteca, metas de leitura e histórico. Sincronização em nuvem com MongoDB.
+        </p>
         <div class="project-stack">
           <span>ReactJS</span><span>Node.js</span><span>MongoDB</span>
         </div>
         <div class="project-links">
-          <a href="https://bookflow.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> abrir</a>
+          <a href="https://bookflow.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="abrir" data-en="open">abrir</span></a>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-tag">FRONTEND</div>
-        <h3>Aluguel de Carros</h3>
-        <p>Interface para pesquisa e reserva de carros com comparação de preços. Desenvolvido com ReactJS.</p>
+        <div class="project-tag" data-pt="FRONTEND" data-en="FRONTEND">FRONTEND</div>
+        <h3 data-pt="Aluguel de Carros" data-en="Car Rental">Aluguel de Carros</h3>
+        <p data-pt="Interface para pesquisa e reserva de carros com comparação de preços. Desenvolvido com ReactJS."
+           data-en="Interface for searching and booking cars with price comparison. Built with ReactJS.">
+          Interface para pesquisa e reserva de carros com comparação de preços. Desenvolvido com ReactJS.
+        </p>
         <div class="project-stack">
           <span>ReactJS</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
         </div>
         <div class="project-links">
-          <a href="https://aluguelcarros.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> abrir</a>
-          <a href="https://github.com/Gustav-Stack/Aluguel_de_carros" target="_blank"><i class="fa-brands fa-github"></i> código</a>
+          <a href="https://aluguelcarros.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="abrir" data-en="open">abrir</span></a>
+          <a href="https://github.com/Gustav-Stack/Aluguel_de_carros" target="_blank"><i class="fa-brands fa-github"></i> <span data-pt="código" data-en="code">código</span></a>
         </div>
       </div>
 
@@ -496,25 +192,55 @@
   <section id="contato">
     <div class="section-header">
       <span class="section-num">03.</span>
-      <h2>contato</h2>
+      <h2 data-pt="contato" data-en="contact">contato</h2>
       <div class="section-line"></div>
     </div>
     <div class="contact-wrap">
-      <h2 style="font-family: var(--font-mono); font-size: 1.6rem;">vamos conversar?</h2>
-      <p>Estou buscando minha primeira oportunidade formal como desenvolvedor backend. Se tiver uma vaga ou quiser trocar ideia, é só me chamar.</p>
-      <a class="btn-primary" href="mailto:gustavolucenaemprego@gmail.com">mandar e-mail</a>
+      <h2 style="font-family: var(--font-mono); font-size: 1.6rem;" data-pt="vamos conversar?" data-en="let's talk?">vamos conversar?</h2>
+      <p data-pt="Estou buscando minha primeira oportunidade formal como desenvolvedor backend. Se tiver uma vaga ou quiser trocar ideia, é só me chamar."
+         data-en="I'm looking for my first formal opportunity as a backend developer. If you have an opening or just want to chat, feel free to reach out.">
+        Estou buscando minha primeira oportunidade formal como desenvolvedor backend. Se tiver uma vaga ou quiser trocar ideia, é só me chamar.
+      </p>
+      <a class="btn-primary" href="mailto:gustavolucenaemprego@gmail.com" data-pt="mandar e-mail" data-en="send email">mandar e-mail</a>
       <div class="contact-links">
         <a href="https://www.linkedin.com/in/gustavo-lucena1/" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/Gustav-Stack" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="mailto:gustavolucenaemprego@gmail.com"><i class="fa-regular fa-envelope"></i> e-mail</a>
+        <a href="mailto:gustavolucenaemprego@gmail.com"><i class="fa-regular fa-envelope"></i> <span data-pt="e-mail" data-en="email">e-mail</span></a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>desenvolvido por gustavo lucena · 2025</p>
+    <p data-pt="desenvolvido por gustavo lucena · 2025" data-en="built by gustavo lucena · 2025">desenvolvido por gustavo lucena · 2025</p>
   </footer>
 
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+
+      document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+
+      document.querySelectorAll('[data-pt-html][data-en-html]').forEach(el => {
+        el.innerHTML = el.getAttribute('data-' + lang + '-html');
+      });
+
+      // troca qual currículo fica visível
+      document.getElementById('cv-pt').style.display = lang === 'pt' ? 'inline-flex' : 'none';
+      document.getElementById('cv-en').style.display = lang === 'en' ? 'inline-flex' : 'none';
+
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+      localStorage.setItem('portfolio-lang', lang);
+    }
+
+    (function () {
+      const saved = localStorage.getItem('portfolio-lang');
+      if (saved === 'en') setLang('en');
+    })();
+  </script>
   <script src="app.js"></script>
 </body>
 </html>
