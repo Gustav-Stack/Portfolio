@@ -12,6 +12,115 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <title>Gustavo | Portfólio</title>
   <link rel="stylesheet" href="styles/style.css">
+
+  <style>
+    /* =========================================================
+       1) ÍCONES DE MARCA (Simple Icons) — cinza, no tom de --muted
+       ========================================================= */
+    .stack-pill,
+    .project-stack span,
+    .skills-list li {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      transition: transform .2s ease;
+    }
+
+    .stack-pill:hover,
+    .project-stack span:hover,
+    .skills-list li:hover {
+      transform: translateY(-2px);
+    }
+
+    .tech-icon {
+      width: 1em;
+      height: 1em;
+      object-fit: contain;
+      flex-shrink: 0;
+      vertical-align: middle;
+      opacity: 0.9;
+      transition: transform .25s ease, opacity .25s ease;
+    }
+
+    .stack-pill:hover .tech-icon,
+    .project-stack span:hover .tech-icon,
+    .skills-list li:hover .tech-icon {
+      transform: scale(1.15) rotate(-4deg);
+      opacity: 1;
+    }
+
+    /* ícones genéricos (conceitos sem logo próprio) — mesmo --muted dos ícones de marca */
+    .icon-generic {
+      font-size: 0.95em;
+      color: var(--muted);
+      opacity: 0.9;
+    }
+
+    /* =========================================================
+       2) LINKS: PLAIN + CINZA POR PADRÃO, VERDE (--accent) NO HOVER
+       O resto dos "detalhes" (section-num, hero-tag, project-tag,
+       wip-badge, marcador ▸, borda do card no hover) já usa
+       var(--accent) no style.css — não precisa duplicar aqui.
+       ========================================================= */
+    a {
+      color: var(--muted) !important;
+      background: none !important;
+      background-image: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45em;
+      position: relative;
+      transition: color .25s ease, transform .2s ease, opacity .25s ease;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 1px;
+      background: var(--accent);
+      opacity: 0.9;
+      transition: width .3s ease;
+    }
+
+    a:hover {
+      color: var(--accent) !important;
+      transform: translateY(-1px);
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    a:active {
+      transform: translateY(0);
+      opacity: 0.75;
+    }
+
+    /* a logo já é verde por padrão via style.css (.nav-logo { color: var(--accent) }) */
+    .nav-logo {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .nav-logo::after { display: none; }
+
+    /* botão de idioma ativo já fica verde sólido com texto preto no style.css —
+       aqui só garantimos que não herda o sublinhado dos links */
+    .lang-switch button::after { display: none; }
+
+    /* pequenas correções de alinhamento para os ícones dentro dos links */
+    .hero-links a i,
+    .project-links a i,
+    .contact-links a i,
+    .btn-cv i {
+      font-size: 0.95em;
+    }
+  </style>
 </head>
 
 <body>
@@ -56,16 +165,16 @@
   <div class="stack-bar">
     <span class="stack-label" data-pt="STACK PRINCIPAL" data-en="MAIN STACK">STACK PRINCIPAL</span>
     <div class="stack-items">
-      <span class="stack-pill">NestJS</span>
-      <span class="stack-pill">TypeScript</span>
-      <span class="stack-pill">Python</span>
-      <span class="stack-pill">PostgreSQL</span>
-      <span class="stack-pill">Streamlit</span>
-      <span class="stack-pill">LLM / OpenRouter</span>
-      <span class="stack-pill">Google Cloud Run</span>
-      <span class="stack-pill">Docker</span>
-      <span class="stack-pill">Redis</span>
-      <span class="stack-pill">REST APIs</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/nestjs/888888" alt="NestJS">NestJS</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/888888" alt="TypeScript">TypeScript</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/python/888888" alt="Python">Python</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/888888" alt="PostgreSQL">PostgreSQL</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/streamlit/888888" alt="Streamlit">Streamlit</span>
+      <span class="stack-pill"><i class="fa-solid fa-brain icon-generic"></i>LLM / OpenRouter</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/888888" alt="Google Cloud">Google Cloud Run</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/docker/888888" alt="Docker">Docker</span>
+      <span class="stack-pill"><img class="tech-icon" src="https://cdn.simpleicons.org/redis/888888" alt="Redis">Redis</span>
+      <span class="stack-pill"><i class="fa-solid fa-network-wired icon-generic"></i>REST APIs</span>
     </div>
   </div>
 
@@ -94,23 +203,23 @@
           Busco oportunidades formais como desenvolvedor backend, onde possa agregar com <strong>código limpo, engenharia aplicada de LLM, segurança e infraestrutura em nuvem.</strong>
         </p>
       </div>
-      
+
       <div>
         <ul class="skills-list">
-          <li>NestJS</li>
-          <li>TypeScript</li>
-          <li>Python (pandas / Plotly)</li>
-          <li>Streamlit</li>
-          <li>OpenRouter / LLMs</li>
-          <li>PostgreSQL / Cloud SQL</li>
-          <li>SQLAlchemy / Prisma</li>
-          <li>Redis</li>
-          <li>Docker</li>
-          <li>Google Cloud Run</li>
-          <li>Secret Manager</li>
-          <li>WebSockets</li>
-          <li>Git</li>
-          <li>Swagger</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/nestjs/888888" alt="NestJS">NestJS</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/888888" alt="TypeScript">TypeScript</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/python/888888" alt="Python">Python (pandas / Plotly)</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/streamlit/888888" alt="Streamlit">Streamlit</li>
+          <li><i class="fa-solid fa-brain icon-generic"></i>OpenRouter / LLMs</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/888888" alt="PostgreSQL">PostgreSQL / Cloud SQL</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/prisma/888888" alt="Prisma">SQLAlchemy / Prisma</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/redis/888888" alt="Redis">Redis</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/docker/888888" alt="Docker">Docker</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/888888" alt="Google Cloud">Google Cloud Run</li>
+          <li><i class="fa-solid fa-key icon-generic"></i>Secret Manager</li>
+          <li><i class="fa-solid fa-bolt icon-generic"></i>WebSockets</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/git/888888" alt="Git">Git</li>
+          <li><img class="tech-icon" src="https://cdn.simpleicons.org/swagger/888888" alt="Swagger">Swagger</li>
         </ul>
       </div>
     </div>
@@ -143,12 +252,12 @@
       </p>
 
       <div class="project-stack">
-        <span>Cloud Computing Fundamentals</span>
-        <span>Infrastructure in Google Cloud</span>
-        <span>App Dev Environment</span>
-        <span>Load Balancing</span>
-        <span>Secure Google Cloud Network</span>
-        <span>ML APIs</span>
+        <span><i class="fa-solid fa-cloud icon-generic"></i>Cloud Computing Fundamentals</span>
+        <span><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/888888" alt="Google Cloud">Infrastructure in Google Cloud</span>
+        <span><i class="fa-solid fa-laptop-code icon-generic"></i>App Dev Environment</span>
+        <span><i class="fa-solid fa-scale-balanced icon-generic"></i>Load Balancing</span>
+        <span><i class="fa-solid fa-shield-halved icon-generic"></i>Secure Google Cloud Network</span>
+        <span><i class="fa-solid fa-brain icon-generic"></i>ML APIs</span>
       </div>
     </div>
   </section>
@@ -170,9 +279,14 @@
           Dashboard de inteligência operacional com copiloto de IA para análise de negócios em linguagem natural. Utiliza uma arquitetura focada em segurança onde o LLM é isolado do banco de dados relacional, analisando apenas datasets agregados e estruturados do PostgreSQL para gerar insights e especificações declarativas de gráficos Plotly.
         </p>
         <div class="project-stack">
-          <span>Python</span><span>Streamlit</span><span>Plotly</span>
-          <span>PostgreSQL</span><span>Cloud SQL</span><span>OpenRouter</span>
-          <span>Google Cloud Run</span><span>Secret Manager</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/python/888888" alt="Python">Python</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/streamlit/888888" alt="Streamlit">Streamlit</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/plotly/888888" alt="Plotly">Plotly</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/888888" alt="PostgreSQL">PostgreSQL</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/888888" alt="Google Cloud">Cloud SQL</span>
+          <span><i class="fa-solid fa-brain icon-generic"></i>OpenRouter</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/googlecloud/888888" alt="Google Cloud">Google Cloud Run</span>
+          <span><i class="fa-solid fa-key icon-generic"></i>Secret Manager</span>
         </div>
         <div class="project-links">
           <a href="https://site-services-copilot-866129993555.us-central1.run.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="demo ao vivo" data-en="live demo">demo ao vivo</span></a>
@@ -188,8 +302,12 @@
           Plataforma de entregas em desenvolvimento. Atuo como responsável pelo backend, contribuindo na definição da arquitetura do sistema, diagramação do banco de dados e tomada de decisões técnicas em conjunto com o time. Responsável por organizar e delegar tarefas técnicas, além de implementar as funcionalidades diretamente.
         </p>
         <div class="project-stack">
-          <span>NestJS</span><span>TypeScript</span><span>Prisma ORM</span>
-          <span>PostgreSQL</span><span>Redis</span><span>Docker</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/nestjs/888888" alt="NestJS">NestJS</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/888888" alt="TypeScript">TypeScript</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/prisma/888888" alt="Prisma">Prisma ORM</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/888888" alt="PostgreSQL">PostgreSQL</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/redis/888888" alt="Redis">Redis</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/docker/888888" alt="Docker">Docker</span>
         </div>
         <div class="project-links">
           <a href="https://likedelivery.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="abrir" data-en="open">abrir</span></a>
@@ -204,7 +322,10 @@
           Plataforma para gestão de clínicas odontológicas, com autenticação, agendamento e persistência de dados. Desenvolvido com Next.js, Prisma ORM, autenticação e PostgreSQL.
         </p>
         <div class="project-stack">
-          <span>Next.js</span><span>Prisma ORM</span><span>Auth</span><span>PostgreSQL</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/nextdotjs/888888" alt="Next.js">Next.js</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/prisma/888888" alt="Prisma">Prisma ORM</span>
+          <span><i class="fa-solid fa-lock icon-generic"></i>Auth</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/888888" alt="PostgreSQL">PostgreSQL</span>
         </div>
         <div class="project-links">
           <a href="https://odontoproplus.netlify.app/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="abrir" data-en="open">abrir</span></a>
@@ -213,15 +334,18 @@
       </div>
 
       <div class="project-card">
-        <div class="project-tag" data-pt="BACKEND · API REST + WEBSOCKETS" data-en="BACKEND · REST API + WEBSOCKETS">BACKEND · REST API + WEBSOCKETS</div>
+        <div class="project-tag" data-pt="BACKEND · API REST + WEBSOCKETS" data-en="BACKEND · REST API + WEBSOCKETS">BACKEND · API REST + WEBSOCKETS</div>
         <h3>WhyApp</h3>
         <p data-pt="Aplicativo de conversas em tempo real. Responsável pelo desenvolvimento da API com NestJS e TypeScript, integração com PostgreSQL via Prisma ORM e implementação de WebSockets para comunicação em tempo real. Colaboração direta com o time de front-end."
            data-en="Real-time chat application. Responsible for building the API with NestJS and TypeScript, integrating PostgreSQL via Prisma ORM, and implementing WebSockets for real-time communication. Worked directly with the front-end team.">
           Aplicativo de conversas em tempo real. Responsável pelo desenvolvimento da API com NestJS e TypeScript, integração com PostgreSQL via Prisma ORM e implementação de WebSockets para comunicação em tempo real. Colaboração direta com o time de front-end.
         </p>
         <div class="project-stack">
-          <span>NestJS</span><span>TypeScript</span><span>Prisma ORM</span>
-          <span>PostgreSQL</span><span>WebSockets</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/nestjs/888888" alt="NestJS">NestJS</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/typescript/888888" alt="TypeScript">TypeScript</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/prisma/888888" alt="Prisma">Prisma ORM</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/888888" alt="PostgreSQL">PostgreSQL</span>
+          <span><i class="fa-solid fa-bolt icon-generic"></i>WebSockets</span>
         </div>
         <div class="project-links">
           <a href="https://whyapp.onrender.com/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="abrir" data-en="open">abrir</span></a>
@@ -237,7 +361,10 @@
           Interface para pesquisa e reserva de carros com comparação de preços. Desenvolvido com ReactJS.
         </p>
         <div class="project-stack">
-          <span>ReactJS</span><span>HTML</span><span>CSS</span><span>JavaScript</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/react/888888" alt="React">ReactJS</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/html5/888888" alt="HTML5">HTML</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/css/888888" alt="CSS">CSS</span>
+          <span><img class="tech-icon" src="https://cdn.simpleicons.org/javascript/888888" alt="JavaScript">JavaScript</span>
         </div>
         <div class="project-links">
           <a href="https://aluguelcarros.netlify.app" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-pt="abrir" data-en="open">abrir</span></a>
