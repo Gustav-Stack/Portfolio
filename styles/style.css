@@ -105,6 +105,8 @@
     .nav-logo {
       position: relative;
       pointer-events: none;
+          height: 50px;
+              width: fit-content;
     }
     .nav-logo,
     .nav-logo img {

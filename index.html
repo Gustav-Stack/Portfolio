@@ -62,7 +62,58 @@
   <a class="skip-link" href="#conteudo" data-i18n="skip_link">pular para o conteúdo</a>
 
   <nav>
-    <a class="nav-logo" href="#"><img src="public/logo.png" alt="Gustavo Lucena"></a>
+    <a class="nav-logo img" href="#"><svg width="900" height="240" viewBox="0 0 900 240" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0b0b0d; }
+      .primary {
+        fill: #ffffff;
+        font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
+        font-weight: 300;
+      }
+      .accent {
+        fill: #F5B61A;
+        font-family: 'Inter', 'SF Pro Display', 'Segoe UI', sans-serif;
+        font-weight: 500;
+      }
+      .mono {
+        fill: #9a9a9a;
+        font-family: 'JetBrains Mono', 'Consolas', monospace;
+        letter-spacing: 5px;
+      }
+    </style>
+  </defs>
+
+
+  <!-- Prompt -->
+  <g transform="translate(85 120)">
+    <path d="M0 -32 L48 0 L0 32"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="8"
+          stroke-linecap="round"
+          stroke-linejoin="round"/>
+
+    <line x1="65" y1="30" x2="125" y2="30"
+          stroke="#ffffff"
+          stroke-width="8"
+          stroke-linecap="round"/>
+  </g>
+
+  <!-- Name -->
+  <text x="270" y="95" class="primary" font-size="64">
+    gustavo
+  </text>
+
+  <text x="270" y="158" class="accent" font-size="64">
+    lucena
+  </text>
+
+  <!-- Subtitle -->
+  <text x="270" y="205" class="mono" font-size="26">
+    SOFTWARE ENGINEER
+  </text>
+</svg></a>
     <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
