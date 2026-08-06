@@ -93,23 +93,7 @@
       letter-spacing: 0.02em;
       display: inline-flex;
       align-items: center;
-    }
-    .nav-logo img {
-      position: fixed;
-      height: 109px;
-      width: auto;
-      margin: -49px;
-      z-index: 101;
-      pointer-events: none;
-    }
-    .nav-logo {
       position: relative;
-      pointer-events: none;
-    
-    }
-    .nav-logo,
-    .nav-logo img {
-      pointer-events: auto;
     }
     .nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
     .nav-links a {
@@ -529,8 +513,14 @@
     }
 
     @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; flex-wrap: wrap; gap: 0.75rem; }
-      .nav-toggle { display: flex; }
+      nav {
+        padding: 0.9rem 1.25rem;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem 0.75rem;
+      }
+      .nav-logo { flex: 0 1 auto; min-width: 0; }
+      .nav-toggle { display: flex; flex-shrink: 0; margin-left: auto; }
       .nav-links {
         display: none;
         width: 100%;
@@ -542,6 +532,8 @@
         border-top: 1px solid var(--border);
       }
       .nav-links.open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links .lang-switch { width: fit-content; }
       .hero { padding: 8.5rem 1.5rem 3rem; }
       .stack-bar { padding: 1.5rem; }
       section { padding: 3rem 1.5rem; }
@@ -550,16 +542,23 @@
       .project-card.featured { grid-column: span 1; }
     }
 
+    @media (max-width: 380px) {
+      nav { padding: 0.8rem 1rem; }
+      .logo { height: 46px; }
+      .nav-toggle { width: 28px; height: 28px; gap: 4px; }
+      .nav-links { gap: 0.9rem; }
+      .btn-cv { font-size: 0.7rem; padding: 0.45rem 0.9rem; }
+    }
+
     .nav-logo {
     display: flex;
     align-items: center;
-          height: 50px;
-              width: fit-content;
+    width: fit-content;
 }
 
 .logo {
-    width: 300px;
-    height: auto;
+    height: 52px;
+    width: auto;
     display: block;
 }
 
