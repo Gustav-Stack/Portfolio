@@ -133,84 +133,56 @@
         <a class="btn btn-ghost" href="#contato" data-i18n="hero_cta2">Vamos conversar</a>
       </div>
 
-      <!-- signature piece: animated architecture diagram -->
+      <!-- signature piece: career roadmap -->
       <figure class="showcase" data-reveal>
         <div class="showcase-frame">
           <div class="showcase-bar">
             <span class="dots"><i></i><i></i><i></i></span>
-            <span class="showcase-title">architecture.svg — secure-llm-pipeline</span>
-            <span class="showcase-status"><span class="live-dot"></span>live</span>
+            <span class="showcase-title" data-i18n="rm_title">roadmap.md — carreira</span>
+            <span class="showcase-status"><span class="live-dot"></span><span data-i18n="rm_status">em andamento</span></span>
           </div>
           <div class="showcase-scroll">
-            <svg class="arch arch-wide" viewBox="0 40 960 330" role="img" aria-labelledby="arch-title">
-              <title id="arch-title">Diagrama: cliente, API NestJS, PostgreSQL, Redis, camada de agregação e LLM isolado em sandbox</title>
-              <defs>
-                <radialGradient id="g-pulse"><stop offset="0" stop-color="#9cc2ff"/><stop offset="1" stop-color="#4f8dff" stop-opacity="0"/></radialGradient>
-              </defs>
-
-              <!-- wires -->
-              <g class="wires" fill="none" stroke-width="1.5">
-                <path id="w1" d="M194 185 H262"/>
-                <path id="w2" d="M432 185 C466 185 466 92 500 92"/>
-                <path id="w3" d="M432 185 C466 185 466 278 500 278"/>
-                <path id="w4" d="M670 92 H766"/>
-                <path id="w5" d="M851 120 V250"/>
-              </g>
-
-              <!-- moving packets -->
-              <g class="packets">
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#w1"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2.4s" begin=".6s" repeatCount="indefinite"><mpath href="#w2"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2.4s" begin="1.1s" repeatCount="indefinite"><mpath href="#w3"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" begin="1.4s" repeatCount="indefinite"><mpath href="#w4"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" begin="2s" repeatCount="indefinite"><mpath href="#w5"/></animateMotion></circle>
-              </g>
-
-              <!-- sandbox around the LLM -->
-              <rect class="sandbox" x="748" y="232" width="206" height="102" rx="16"/>
-              <text class="sandbox-label" x="851" y="356" text-anchor="middle" data-i18n="arch_sandbox">sandbox · sem acesso ao banco</text>
-
-              <!-- nodes -->
-              <g class="node"><rect x="24" y="157" width="170" height="56" rx="12"/><text x="44" y="182" class="n-title">Client</text><text x="44" y="200" class="n-sub">web · mobile</text></g>
-              <g class="node node-hi"><rect x="262" y="157" width="170" height="56" rx="12"/><text x="282" y="182" class="n-title">NestJS API</text><text x="282" y="200" class="n-sub">auth · rate limit</text></g>
-              <g class="node"><rect x="500" y="64" width="170" height="56" rx="12"/><text x="520" y="89" class="n-title">PostgreSQL</text><text x="520" y="107" class="n-sub">Cloud SQL</text></g>
-              <g class="node"><rect x="500" y="250" width="170" height="56" rx="12"/><text x="520" y="275" class="n-title">Redis</text><text x="520" y="293" class="n-sub" data-i18n="arch_redis">cache · filas</text></g>
-              <g class="node"><rect x="766" y="64" width="170" height="56" rx="12"/><text x="786" y="89" class="n-title" data-i18n="arch_agg">Agregação</text><text x="786" y="107" class="n-sub" data-i18n="arch_agg_sub">datasets curados</text></g>
-              <g class="node node-llm"><rect x="766" y="250" width="170" height="56" rx="12"/><text x="786" y="275" class="n-title">LLM</text><text x="786" y="293" class="n-sub">OpenRouter</text></g>
-
-              <!-- edge labels -->
-              <text class="edge" x="228" y="174" text-anchor="middle">HTTPS</text>
-              <text class="edge" x="718" y="82" text-anchor="middle">read-only</text>
-            </svg>
-            <svg class="arch arch-tall" viewBox="0 0 360 520" role="img" aria-labelledby="arch-title-m">
-              <title id="arch-title-m">Diagrama: cliente, API NestJS, PostgreSQL, Redis, camada de agregação e LLM isolado em sandbox</title>
-              <g class="wires" fill="none" stroke-width="1.5">
-                <path id="m1" d="M180 62 V100"/>
-                <path id="m2" d="M180 152 C180 176 90 176 90 200"/>
-                <path id="m3" d="M180 152 C180 176 270 176 270 200"/>
-                <path id="m4" d="M90 252 V300"/>
-                <path id="m5" d="M90 352 V400"/>
-              </g>
-              <g class="packets">
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#m1"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" begin=".5s" repeatCount="indefinite"><mpath href="#m2"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" begin=".9s" repeatCount="indefinite"><mpath href="#m3"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" begin="1.3s" repeatCount="indefinite"><mpath href="#m4"/></animateMotion></circle>
-                <circle r="4" fill="url(#g-pulse)"><animateMotion dur="2s" begin="1.8s" repeatCount="indefinite"><mpath href="#m5"/></animateMotion></circle>
-              </g>
-              <rect class="sandbox" x="0" y="386" width="180" height="80" rx="14"/>
-              <text class="sandbox-label" x="4" y="488" data-i18n="arch_sandbox">sandbox · sem acesso ao banco</text>
-              <g class="node"><rect x="80" y="10" width="200" height="52" rx="12"/><text x="96" y="33" class="n-title">Client</text><text x="96" y="51" class="n-sub">web · mobile</text></g>
-              <g class="node node-hi"><rect x="80" y="100" width="200" height="52" rx="12"/><text x="96" y="123" class="n-title">NestJS API</text><text x="96" y="141" class="n-sub">auth · rate limit</text></g>
-              <g class="node"><rect x="10" y="200" width="160" height="52" rx="12"/><text x="26" y="223" class="n-title">PostgreSQL</text><text x="26" y="241" class="n-sub">Cloud SQL</text></g>
-              <g class="node"><rect x="190" y="200" width="160" height="52" rx="12"/><text x="206" y="223" class="n-title">Redis</text><text x="206" y="241" class="n-sub" data-i18n="arch_redis">cache · filas</text></g>
-              <g class="node"><rect x="10" y="300" width="160" height="52" rx="12"/><text x="26" y="323" class="n-title" data-i18n="arch_agg">Agregação</text><text x="26" y="341" class="n-sub" data-i18n="arch_agg_sub">datasets curados</text></g>
-              <g class="node node-llm"><rect x="10" y="400" width="160" height="52" rx="12"/><text x="26" y="423" class="n-title">LLM</text><text x="26" y="441" class="n-sub">OpenRouter</text></g>
-              <text class="edge" x="100" y="280">read-only</text>
-            </svg>
+            <ol class="roadmap" aria-label="Roadmap da carreira">
+          <li class="rm-step">
+            <span class="rm-dot" aria-hidden="true"></span>
+            <p class="rm-when" data-i18n="rm1_when">Antes da tecnologia</p>
+            <h3 class="rm-title" data-i18n="rm1_title">Vendas diretas</h3>
+            <p class="rm-desc" data-i18n="rm1_desc">Aprendi a ouvir e a entender o que o cliente realmente precisa.</p>
+          </li>
+          <li class="rm-step">
+            <span class="rm-dot" aria-hidden="true"></span>
+            <p class="rm-when" data-i18n="rm2_when">2022</p>
+            <h3 class="rm-title" data-i18n="rm2_title">Engenharia de Software</h3>
+            <p class="rm-desc" data-i18n="rm2_desc">Início da graduação na UniCesumar e da pesquisa em IA e memória.</p>
+          </li>
+          <li class="rm-step">
+            <span class="rm-dot" aria-hidden="true"></span>
+            <p class="rm-when" data-i18n="rm3_when">2023</p>
+            <h3 class="rm-title" data-i18n="rm3_title">Primeira entrega: BookFlow</h3>
+            <p class="rm-desc" data-i18n="rm3_desc">Aplicação web completa como freelancer, com React e Node.js.</p>
+          </li>
+          <li class="rm-step">
+            <span class="rm-dot" aria-hidden="true"></span>
+            <p class="rm-when" data-i18n="rm4_when">2024</p>
+            <h3 class="rm-title" data-i18n="rm4_title">Foco em backend</h3>
+            <p class="rm-desc" data-i18n="rm4_desc">WhyApp em tempo real e a plataforma de delivery em equipe, com NestJS, JWT, RBAC e Redis.</p>
+          </li>
+          <li class="rm-step">
+            <span class="rm-dot" aria-hidden="true"></span>
+            <p class="rm-when" data-i18n="rm5_when">2025</p>
+            <h3 class="rm-title" data-i18n="rm5_title">Produto e negócio</h3>
+            <p class="rm-desc" data-i18n="rm5_desc">OdontoPRO, um SaaS com assinaturas, e o curso de como criar e lançar uma empresa.</p>
+          </li>
+          <li class="rm-step is-now">
+            <span class="rm-dot" aria-hidden="true"></span>
+            <p class="rm-when" data-i18n="rm6_when">2026</p>
+            <h3 class="rm-title" data-i18n="rm6_title">Nuvem, IA e Northeia</h3>
+            <p class="rm-desc" data-i18n="rm6_desc">6 certificações Google Cloud, IA aplicada em produção e a minha própria startup.</p>
+          </li>
+            </ol>
           </div>
         </div>
-        <figcaption data-i18n-html="arch_caption">Um princípio que apliquei no meu projeto com IA: o <strong>LLM não acessa o banco</strong> — recebe apenas dados agregados e curados.</figcaption>
+        <figcaption data-i18n="rm_caption">Do atendimento ao cliente ao backend e à própria startup: cada etapa construída sobre a anterior.</figcaption>
       </figure>
     </section>
 
@@ -551,14 +523,27 @@
       },
       hero_cta: { pt: "Ver projetos", en: "See my work" },
       hero_cta2: { pt: "Vamos conversar", en: "Let's talk" },
-      arch_sandbox: { pt: "sandbox · sem acesso ao banco", en: "sandbox · no database access" },
-      arch_redis: { pt: "cache · filas", en: "cache · queues" },
-      arch_agg: { pt: "Agregação", en: "Aggregation" },
-      arch_agg_sub: { pt: "datasets curados", en: "curated datasets" },
-      arch_caption: {
-        pt: "Um princípio que apliquei no meu projeto com IA: o <strong>LLM não acessa o banco</strong> — recebe apenas dados agregados e curados.",
-        en: "A principle I applied in my AI project: the <strong>LLM has no database access</strong> — it only receives curated, aggregated data."
-      },
+      rm_title: { pt: "roadmap.md — carreira", en: "roadmap.md — career" },
+      rm_status: { pt: "em andamento", en: "in progress" },
+      rm_caption: { pt: "Do atendimento ao cliente ao backend e à própria startup: cada etapa construída sobre a anterior.", en: "From customer service to backend and my own startup: each stage built on the previous one." },
+      rm1_when: { pt: "Antes da tecnologia", en: "Before tech" },
+      rm1_title: { pt: "Vendas diretas", en: "Direct sales" },
+      rm1_desc: { pt: "Aprendi a ouvir e a entender o que o cliente realmente precisa.", en: "I learned to listen and understand what the customer really needs." },
+      rm2_when: { pt: "2022", en: "2022" },
+      rm2_title: { pt: "Engenharia de Software", en: "Software Engineering" },
+      rm2_desc: { pt: "Início da graduação na UniCesumar e da pesquisa em IA e memória.", en: "Started the degree at UniCesumar and research on AI and memory." },
+      rm3_when: { pt: "2023", en: "2023" },
+      rm3_title: { pt: "Primeira entrega: BookFlow", en: "First delivery: BookFlow" },
+      rm3_desc: { pt: "Aplicação web completa como freelancer, com React e Node.js.", en: "A complete web application as a freelancer, with React and Node.js." },
+      rm4_when: { pt: "2024", en: "2024" },
+      rm4_title: { pt: "Foco em backend", en: "Backend focus" },
+      rm4_desc: { pt: "WhyApp em tempo real e a plataforma de delivery em equipe, com NestJS, JWT, RBAC e Redis.", en: "The real-time WhyApp and the team-built delivery platform, with NestJS, JWT, RBAC, and Redis." },
+      rm5_when: { pt: "2025", en: "2025" },
+      rm5_title: { pt: "Produto e negócio", en: "Product and business" },
+      rm5_desc: { pt: "OdontoPRO, um SaaS com assinaturas, e o curso de como criar e lançar uma empresa.", en: "OdontoPRO, a subscription SaaS, and the course on creating and launching a company." },
+      rm6_when: { pt: "2026", en: "2026" },
+      rm6_title: { pt: "Nuvem, IA e Northeia", en: "Cloud, AI, and Northeia" },
+      rm6_desc: { pt: "6 certificações Google Cloud, IA aplicada em produção e a minha própria startup.", en: "6 Google Cloud certifications, applied AI in production, and my own startup." },
 
       about_kicker: { pt: "Sobre", en: "About" },
       about_title: {
