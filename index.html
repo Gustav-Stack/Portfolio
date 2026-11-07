@@ -278,7 +278,7 @@
           </div>
         </article>
 
-        <article class="card c-edu">
+        <article class="card c-edu" id="formacao" tabindex="-1">
           <div class="edu-item">
             <svg class="edu-ico" aria-hidden="true"><use href="#ic-cap"></use></svg>
             <div><p class="big-sm" data-i18n="edu_title">Bacharel em Engenharia de Software</p><p class="muted"><span data-i18n="edu_period">UniCesumar · 2022–2026</span></p></div>
@@ -337,8 +337,63 @@
         <h2 data-i18n-html="exp_title">Experiência e contribuições.</h2>
       </div>
 
+      <div class="career-roadmap">
+        <div class="roadmap-heading">
+          <div>
+            <p class="kicker" data-i18n="roadmap_label">Minha trajetória</p>
+            <h3 data-i18n="roadmap_title">Da base técnica à construção de produtos.</h3>
+          </div>
+          <p data-i18n="roadmap_intro">Uma leitura rápida da minha evolução. Explore cada etapa para conhecer o contexto e as contribuições.</p>
+        </div>
+        <ol class="roadmap-path">
+          <li class="roadmap-stop">
+            <span class="roadmap-icon"><svg aria-hidden="true"><use href="#ic-cap"></use></svg></span>
+            <p class="roadmap-date">2022–2026</p>
+            <h3><a href="#formacao" data-i18n="roadmap_edu">Engenharia de Software</a></h3>
+            <p data-i18n="roadmap_edu_desc">UniCesumar · formação e pesquisa em inteligência artificial.</p>
+            <span class="roadmap-skill" data-i18n="roadmap_foundation">Fundamentos & pesquisa</span>
+          </li>
+          <li class="roadmap-stop">
+            <span class="roadmap-icon"><svg aria-hidden="true"><use href="#ic-book"></use></svg></span>
+            <p class="roadmap-date">2023</p>
+            <h3><a href="#experiencia-bookflow">BookFlow</a></h3>
+            <p data-i18n="roadmap_book">Freelancer fullstack · aplicação web com React, Node.js e MongoDB.</p>
+            <span class="roadmap-skill">React / Node.js / MongoDB</span>
+          </li>
+          <li class="roadmap-stop">
+            <span class="roadmap-icon"><svg aria-hidden="true"><use href="#fa-solid-network-wired"></use></svg></span>
+            <p class="roadmap-date">2024</p>
+            <h3><a href="#experiencia-whyapp">WhyApp</a></h3>
+            <p data-i18n="roadmap_why">Backend em equipe · APIs e comunicação em tempo real.</p>
+            <span class="roadmap-skill">REST / WebSockets</span>
+          </li>
+          <li class="roadmap-stop">
+            <span class="roadmap-icon"><svg aria-hidden="true"><use href="#fa-solid-laptop-code"></use></svg></span>
+            <p class="roadmap-date" data-i18n="roadmap_delivery_date">2025 · em desenvolvimento</p>
+            <h3><a href="#experiencia-delivery">Bear Delivery <small>(LikeDelivery)</small></a></h3>
+            <p data-i18n="roadmap_delivery">APIs, autenticação e regras de negócio para uma plataforma de delivery.</p>
+            <span class="roadmap-skill">NestJS / JWT / PostgreSQL</span>
+          </li>
+          <li class="roadmap-stop">
+            <span class="roadmap-icon"><svg aria-hidden="true"><use href="#ic-shield"></use></svg></span>
+            <p class="roadmap-date" data-i18n="roadmap_parallel">Em paralelo</p>
+            <h3><a href="#experiencia-comunidade">Juninhos Unidos</a></h3>
+            <p data-i18n="roadmap_oss">Contribuição open source · API de seguros em Java e Spring Boot.</p>
+            <span class="roadmap-skill">Java / Spring Boot</span>
+          </li>
+          <li class="roadmap-stop roadmap-current">
+            <span class="roadmap-icon"><svg aria-hidden="true"><use href="#ic-globe"></use></svg></span>
+            <p class="roadmap-date" data-i18n="exp0_when">Atual</p>
+            <h3><a href="#experiencia-northeia">Northeia</a></h3>
+            <p data-i18n="roadmap_northeia">Fundador · engenharia de software, dados e IA aplicada a negócios.</p>
+            <span class="roadmap-skill" data-i18n="roadmap_product">Software / Dados / IA</span>
+          </li>
+        </ol>
+        <p class="roadmap-note" data-i18n="roadmap_note">Experiências que se complementam: formação, projetos e atuação profissional acontecem também em paralelo.</p>
+      </div>
+
       <ol class="timeline">
-        <li class="t-row">
+        <li class="t-row" id="experiencia-northeia" tabindex="-1">
           <p class="t-when" data-i18n="exp0_when">Atual</p>
           <div class="t-body">
             <a class="og-preview" href="https://northeia.com.br/" target="_blank" rel="noopener noreferrer">
@@ -354,7 +409,7 @@
             <div class="work-links"><a class="link-arrow" href="https://northeia.com.br/" target="_blank" rel="noopener noreferrer"><span data-i18n="link_site">Ver site</span><svg class="ico" aria-hidden="true"><use href="#ic-arrow-ur"></use></svg></a></div>
           </div>
         </li>
-        <li class="t-row">
+        <li class="t-row" id="experiencia-delivery" tabindex="-1">
           <p class="t-when"><span data-i18n="exp1_when">Maio de 2025 — em desenvolvimento</span></p>
           <div class="t-body">
             <h3><span data-i18n="exp1_role">Desenvolvedor Backend</span> <span class="t-at" data-i18n="exp_team">· Projetos colaborativos</span></h3>
@@ -366,20 +421,20 @@
             </ul>
           </div>
         </li>
-        <li class="t-row">
+        <li class="t-row" id="experiencia-whyapp" tabindex="-1">
           <p class="t-when">2024</p>
           <div class="t-body">
             <h3 data-i18n="why_exp_role">Desenvolvedor Backend Júnior</h3>
             <p class="t-sub" data-i18n="why_exp_desc">WhyApp · projeto colaborativo em equipe de cinco pessoas. Contribuí com API REST, comunicação em tempo real e integração com frontend.</p>
           </div>
         </li>
-        <li class="t-row">
+        <li class="t-row" id="experiencia-comunidade" tabindex="-1">
           <p class="t-when" data-i18n="exp2_when">Em andamento</p>
           <div class="t-body"><h3><span data-i18n="exp2_role">Contribuidor open source</span> <span class="t-at">· Juninhos Unidos</span></h3>
           <p class="t-sub" data-i18n="exp2_sub">API de seguros construída em comunidade</p>
           <ul class="tags"><li>Java</li><li>Spring Boot</li><li>Kafka</li><li>MongoDB</li><li>PostgreSQL</li><li>Redis</li></ul></div>
         </li>
-        <li class="t-row"><p class="t-when">2023</p><div class="t-body">
+        <li class="t-row" id="experiencia-bookflow" tabindex="-1"><p class="t-when">2023</p><div class="t-body">
           <h3><span data-i18n="exp3_role">Desenvolvedor Fullstack</span> <span class="t-at">· BookFlow</span></h3>
           <p class="t-sub" data-i18n="exp3_sub">Freelancer · criação e desenvolvimento da aplicação web</p>
           <ul class="tags"><li>React</li><li>Node.js</li><li>MongoDB</li><li>JavaScript</li></ul>
@@ -439,6 +494,21 @@
   <script>
     // single source of truth for all bilingual copy — see data-i18n / data-i18n-html
     const translations = {
+      roadmap_title: { pt: 'Da base técnica à construção de produtos.', en: 'From technical foundations to building products.' },
+      roadmap_intro: { pt: 'Uma leitura rápida da minha evolução. Explore cada etapa para conhecer o contexto e as contribuições.', en: 'A quick look at my development. Explore each stage for context and contributions.' },
+      roadmap_foundation: { pt: 'Fundamentos & pesquisa', en: 'Foundations & research' },
+      roadmap_product: { pt: 'Software / Dados / IA', en: 'Software / Data / AI' },
+      roadmap_label: { pt: 'Minha trajetória', en: 'My journey' },
+      roadmap_edu: { pt: 'Engenharia de Software', en: 'Software Engineering' },
+      roadmap_edu_desc: { pt: 'UniCesumar · formação e pesquisa em inteligência artificial.', en: 'UniCesumar · degree and research in artificial intelligence.' },
+      roadmap_book: { pt: 'Freelancer fullstack · aplicação web com React, Node.js e MongoDB.', en: 'Fullstack freelance · web application with React, Node.js and MongoDB.' },
+      roadmap_why: { pt: 'Backend em equipe · APIs e comunicação em tempo real.', en: 'Collaborative backend development · APIs and real-time communication.' },
+      roadmap_delivery_date: { pt: '2025 · em desenvolvimento', en: '2025 · in development' },
+      roadmap_delivery: { pt: 'APIs, autenticação e regras de negócio para uma plataforma de delivery.', en: 'APIs, authentication and business logic for a delivery platform.' },
+      roadmap_parallel: { pt: 'Em paralelo', en: 'In parallel' },
+      roadmap_oss: { pt: 'Contribuição open source · API de seguros em Java e Spring Boot.', en: 'Open-source contribution · insurance API with Java and Spring Boot.' },
+      roadmap_northeia: { pt: 'Fundador · engenharia de software, dados e IA aplicada a negócios.', en: 'Founder · software engineering, data and applied AI for businesses.' },
+      roadmap_note: { pt: 'Experiências que se complementam: formação, projetos e atuação profissional acontecem também em paralelo.', en: 'Complementary experiences: education, projects and professional work also take place in parallel.' },
       profile_note: {pt: "APIs, dados e integrações. Software conectado à operação.", en: "APIs, data and integrations. Software connected to operations."},
       og_repository: {pt: "Preview do repositório · GitHub ↗", en: "Repository preview · GitHub ↗"},
       preview_loading: {pt: "Carregando site…", en: "Loading website…"},
@@ -819,6 +889,74 @@
     try { savedLang = localStorage.getItem('portfolio-lang'); } catch (e) {}
     setLang(savedLang === 'en' ? 'en' : 'pt');
     document.body.classList.add('lang-ready');
+
+    // Progressive enhancement: content stays visible without JS or motion support.
+    (function () {
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (motion.matches || !('IntersectionObserver' in window)) return;
+      const targets = document.querySelectorAll(
+        '.section-head, .work-item, .secondary-project, .bento > .card, .t-row, .email-cta, .contact-form'
+      );
+      const show = element => {
+        element.classList.add('scroll-revealed');
+        observer.unobserve(element);
+      };
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => { if (entry.isIntersecting) show(entry.target); });
+      }, { threshold: 0, rootMargin: '0px 0px -32px 0px' });
+      targets.forEach(element => {
+        // Never hide content already on screen, including direct anchor navigation.
+        if (element.getBoundingClientRect().top < window.innerHeight) return;
+        element.classList.add('scroll-reveal');
+        observer.observe(element);
+      });
+      document.addEventListener('focusin', event => {
+        const element = event.target.closest('.scroll-reveal');
+        if (element) show(element);
+      });
+      motion.addEventListener('change', event => {
+        if (event.matches) {
+          targets.forEach(show);
+          observer.disconnect();
+        }
+      });
+    })();
+
+    // Reveal each milestone in reading order, including the reversed desktop row.
+    (function () {
+      const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (motion.matches || !('IntersectionObserver' in window)) return;
+      const roadmap = document.querySelector('.career-roadmap');
+      if (!roadmap) return;
+      const stops = [...roadmap.querySelectorAll('.roadmap-stop')];
+      const observer = new IntersectionObserver(entries => {
+        const entering = entries.filter(entry => entry.isIntersecting)
+          .sort((a, b) => stops.indexOf(a.target) - stops.indexOf(b.target));
+        entering.forEach((entry, index) => {
+          entry.target.style.setProperty('--milestone-delay', index * 300 + 'ms');
+          entry.target.classList.add('milestone-visible');
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+      stops.forEach(stop => {
+        stop.classList.add('milestone-reveal');
+        observer.observe(stop);
+      });
+      roadmap.addEventListener('focusin', event => {
+        const stop = event.target.closest('.roadmap-stop');
+        if (stop) {
+          stop.style.setProperty('--milestone-delay', '0ms');
+          stop.classList.add('milestone-visible');
+          observer.unobserve(stop);
+        }
+      });
+      motion.addEventListener('change', event => {
+        if (event.matches) {
+          stops.forEach(stop => stop.classList.add('milestone-visible'));
+          observer.disconnect();
+        }
+      });
+    })();
   </script>
 </body>
 </html>
